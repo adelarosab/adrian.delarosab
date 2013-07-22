@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+body {
+    padding-bottom : 40px;
+    background     : #E9EAED;
+    font           : 16px/normal "Myriad Pro";
+}
+
+.line {
+    position   : absolute;
+    top        : 0;
+    left       : 0;
+    width      : 100%;
+    height     : 20px;
+    background : #3366BB;
+    z-index    : 10;
+}
+
+body > header,
+article {
+    padding       : 20px;
+    border-radius : 3px;
+    border        : 1px solid #D3D6DB;
+    background    : #FFFFFF;
+}
+
+body > header {
+    position   : relative;
+    margin     : 0 auto;
+    width      : 918px;
+    height     : 278px;
+    background : #FFFFFF url('images/header.png') no-repeat right bottom;
+    z-index    : 5;
+}
+
+#logotype {
+    position : relative;
+    top      : 50px;
+    left     : 40px;
+    width    : 475px;
+    height   : 120px;
+}
+
+#slogan {
+    position : relative;
+    top      : 50px;
+    left     : 110px;
+    font     : 2.25rem "Bree Serif";
+}
+
+body > section {
+    position : relative;
+    margin   : 0 auto;
+    width    : 960px;
+    overflow : hidden;
+}
+
+section > section {
+    position : relative;
+    float    : left;
+    width    : 698px;
+}
+
+article {
+    position      : relative;
+    margin-top    : 20px;
+    padding       : 20px;
+    border-radius : 3px;
+}
+
+article:first-child {
+    margin-top : 30px;
+}
+
+article .line {
+    height                  : 10px;
+    border-top-left-radius  : 3px;
+    border-top-right-radius : 3px;
+    background              : #3366BB url('images/line.png') repeat-y left;
+}
+
+article h1 {
+    margin         : 0 0 10px -5px;
+    font           : 1.5rem "League Gothic";
+    text-transform : uppercase;
+}
+
+article p:first-of-type {
+    font-weight: bold;
+}
+
+section > aside {
+    position : relative;
+    float    : right;
+    width    : 240px;
+}
+
+aside > article .line {
+    background : #3366BB url('images/line.reversed.png') repeat-y right;
+}
