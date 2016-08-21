@@ -1,0 +1,78 @@
+<link href="../bower_components/polymer/polymer.html"
+  rel="import">
+<link href="../bower_components/iron-ajax/iron-ajax.html"
+  rel="import">
+<link href="../font-visitor/font-visitor.html"
+  rel="import">
+<link href="../moment/moment.html"
+  rel="import">
+
+<dom-module id="adb-twitter">
+  <template>
+    <style>
+      :host {
+        background-color: white;
+        border-radius: 2px;
+        border: 1px solid #e0e0e0;
+        box-sizing: border-box;
+        color: #212121;
+        display: inline-block;
+        font-family: Visitor, Helvetica, sans-serif;
+        font-size: 14px;
+        position: relative;
+        padding: 10px 20px;
+        width: 250px;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      h1 {
+        font-size: 20px;
+        margin: 0;
+      }
+
+      h1 small {
+        color: #757575;
+        display: block;
+        font-size: 16px;
+      }
+
+      date {
+        display: block;
+        text-align: right;
+      }
+
+      p {
+        margin: 10px 0 0;
+        text-align: center;
+      }
+    </style>
+
+    <iron-ajax
+      auto
+      handle-as="xml"
+      last-response="{{_feed}}"
+      params="[[_params]]"
+      url="http://twitrss.me/twitter_user_to_rss/"
+    ></iron-ajax>
+
+    <a href="[[tweet.link]]">
+      <article>
+        <header>
+          <h1>
+            [[tweet.author.name]]
+            <small>[[tweet.author.username]]</small>
+          </h1>
+          <date>[[tweet.date]]</date>
+        </header>
+        <p>
+          [[tweet.text]]
+        </p>
+      </article>
+    </a>
+  </template>
+  <script src="adb-twitter.js"></script>
+</dom-module>

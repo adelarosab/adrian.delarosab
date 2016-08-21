@@ -1,0 +1,20 @@
+{
+  "name": "adrian.delarosab",
+  "homepage": "https://adrian.delarosab.me",
+  "authors": [
+    "Adrian de la Rosa <adrian@delarosab.me>"
+  ],
+  "description": "Personal website of Adrian de la Rosa",
+  "main": "index.html",
+  "keywords": [
+    "adrian",
+    "website"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "polymer": "^1.6.1",
+    "iron-ajax": "^1.4.3",
+    "moment": "^2.14.1"
+  }
+}
