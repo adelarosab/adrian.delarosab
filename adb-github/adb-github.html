@@ -7,7 +7,7 @@
 <link href="../moment/moment.html"
   rel="import">
 
-<dom-module id="adb-twitter">
+<dom-module id="adb-github">
   <template>
     <style>
       :host {
@@ -21,6 +21,7 @@
         font-size: 14px;
         position: relative;
         padding: 10px 20px;
+        width: 250px;
       }
 
       a {
@@ -28,23 +29,23 @@
         text-decoration: none;
       }
 
-      #author {
+      h1 {
         font-size: 20px;
         margin: 0;
       }
 
-      #author small {
+      h1 small {
         color: #757575;
         display: block;
         font-size: 16px;
       }
 
-      #date {
+      date {
         display: block;
         text-align: right;
       }
 
-      #text {
+      p {
         margin: 10px 0 0;
         text-align: center;
       }
@@ -54,24 +55,23 @@
       auto
       handle-as="xml"
       last-response="{{_feed}}"
-      params="[[_params]]"
-      url="http://twitrss.me/twitter_user_to_rss/"
+      url="https://github.com/adelarosab.atom"
+      with-credentials
     ></iron-ajax>
 
-    <a id="link" href="[[tweet.link]]">
+    <a href="[[tweet.link]]">
       <article>
         <header>
-          <h1 id="author">
-            [[tweet.author.name]]
-            <small>[[tweet.author.username]]</small>
+          <h1>
+            [[tweet.author]]
           </h1>
-          <time id="date" datetime="[[tweet.date.format('L')]]">[[tweet.date.fromNow()]]</time>
+          <date>[[tweet.date]]</date>
         </header>
-        <p id="text"
-        inner-h-t-m-l="[[tweet.text]]">
+        <p>
+          [[tweet.text]]
         </p>
       </article>
     </a>
   </template>
-  <script src="adb-twitter.js"></script>
+  <script src="adb-github.js"></script>
 </dom-module>

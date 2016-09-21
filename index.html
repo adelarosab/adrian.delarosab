@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      /* this script must run before Polymer is imported */
+      window.Polymer = {
+        dom: 'shadow',
+        lazyRegister: true
+      };
+    </script>
     <link href="components.html"
       rel="import">
 
@@ -29,7 +36,14 @@
     </style>
   </head>
   <body>
+    <header>
+      <adb-logotype></adb-logotype>
+      <h1>
+        Adrian
+      </h1>
+    </header>
 
+    <adb-github></adb-github>
     <adb-twitter user="adriandelarosab"></adb-twitter>
   </body>
 </html>

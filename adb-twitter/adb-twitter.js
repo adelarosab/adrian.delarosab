@@ -14,8 +14,8 @@ Polymer(
       tweet: {
         computed: '_computeTweet(_feed)',
         notify: true,
-        type: Array,
-        value: []
+        type: Object,
+        value: {}
       },
 
       user: String,
@@ -25,26 +25,29 @@ Polymer(
       let tweets;
       try {
         tweets = this._feed
-          .getElementsByTagName('rss')[0]
-          .getElementsByTagName('channel')[0]
-          .getElementsByTagName('item');
+          .querySelector('rss')
+          .querySelector('channel')
+          .querySelectorAll('item');
       }
       catch (e) {
         tweets = []
       }
 
       const tweet = Array.prototype.slice.call(tweets).shift();
-      const author = tweet.getElementsByTagName('creator')[0].textContent;
-      const date = moment(tweet.getElementsByTagName('pubDate')[0].textContent);
+      const author = tweet.querySelector('creator').textContent;
+      const date = moment(tweet.querySelector('pubDate').textContent);
 
       return {
         author: {
-          name: author.match(/(.*?) \(/)[1],
-          username: author.match(/\((.*?)\)/)[1],
+          name: author.match(/.*?(?= \()/),
+          username: author.match(/(?=\().*?(?=\))/),
+        },
+        content: {
+          html: tweet.querySelector('description').textContent,
+          plain: tweet.querySelector('title').textContent
         },
         date: date.fromNow(),
-        link: tweet.getElementsByTagName('link')[0].textContent,
-        text: tweet.getElementsByTagName('title')[0].textContent
+        link: tweet.querySelector('link').textContent,
       };
     },
 

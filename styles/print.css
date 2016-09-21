@@ -1,0 +1,128 @@
+@font-face {
+  font-family: 'Visitor';
+  font-style: normal;
+  font-weight: normal;
+  src: url("./fonts/visitor.ttf"); }
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box; }
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+html,
+body {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+
+html {
+  font-family: Visitor, Helvetica, sans-serif;
+  font-size: 10px; }
+
+body {
+  color: #212121;
+  font-size: 2rem; }
+
+header {
+  background-color: #36b;
+  height: 15rem;
+  padding: 2rem 4rem 0 30rem;
+  position: relative; }
+  header::before {
+    background-color: #ffc107;
+    content: '';
+    height: 5px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+  header h1 {
+    color: #fff;
+    font-size: 4.8rem;
+    margin-top: 5rem;
+    position: relative; }
+    header h1 small {
+      color: #bdbdbd; }
+  header p {
+    color: #212121;
+    font-size: 3rem;
+    margin: 0;
+    position: relative; }
+    header p small {
+      display: block; }
+  header img {
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1rem solid #36b;
+    height: 20rem;
+    left: 8rem;
+    margin-top: -10rem;
+    position: absolute;
+    top: 100%; }
+
+main {
+  margin: 2rem auto;
+  padding-top: 10rem;
+  width: 70.4rem; }
+  main blockquote {
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    width: 48%;
+    text-indent: 2.5rem; }
+    main blockquote::before {
+      color: #757575;
+      content: '"';
+      display: inline-block;
+      font-size: 6.4rem;
+      font-weight: bold;
+      left: 0;
+      margin-top: -1.5rem;
+      position: absolute;
+      top: 0;
+      text-indent: 0; }
+  main .contact {
+    display: inline-block;
+    margin-top: 0;
+    width: 48%; }
+    main .contact li {
+      margin-top: .5rem; }
+    main .contact label {
+      display: inline-block;
+      font-weight: bold;
+      min-width: 8rem; }
+  main section {
+    margin-top: 3rem; }
+    main section h2 {
+      border-bottom: 1px solid #bdbdbd;
+      margin-bottom: 1rem; }
+    main section article {
+      margin-top: 2rem; }
+      main section article:nth-child(6) {
+        margin-top: 25rem; }
+    main section time {
+      color: #bdbdbd;
+      display: inline-block;
+      vertical-align: text-top;
+      width: 30%; }
+    main section div {
+      display: inline-block;
+      margin: -.25em;
+      padding-left: 2rem;
+      vertical-align: text-top;
+      width: 70%; }
+    main section h3 small {
+      color: #757575; }
